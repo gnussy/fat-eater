@@ -1,0 +1,10 @@
+version: '3'
+
+services:
+  fat_eater:
+    build: .
+    volumes:
+      - .:/home/cppdev
+    command: bash -c "xmake run"
+    stdin_open: true
+    tty: true

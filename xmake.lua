@@ -16,3 +16,7 @@ target("fat-eater")
   add_files("standalone/main.cpp")
   add_packages(table.unpack(libs))
   add_deps("fat-eater-lib")
+
+  after_build(function (target)
+    os.cp("assets/", target:targetdir())
+  end)
